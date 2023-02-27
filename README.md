@@ -33,7 +33,8 @@ A Gameover and a You win screen
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
-![WalkthroughAppWordle](https://user-images.githubusercontent.com/123262276/221670989-769ae382-f3b2-45dd-b83f-04c8aa496122.gif)
+![WalkthroughAppWordleUpdated](https://user-images.githubusercontent.com/123262276/221689952-29e7bcf0-9b92-45e8-8892-714608de648d.gif)
+
 
 
 <img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
