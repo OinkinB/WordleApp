@@ -3,6 +3,7 @@ package com.example.wordlecodepath
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
@@ -13,6 +14,11 @@ class MainActivity3 : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main3)
+
+        val handler = Handler()
+        val delayInMillis = 3000L // 3 seconds
+
+
 
         val btn = findViewById<Button>(R.id.button)
         val text = findViewById<TextView>(R.id.textView)
@@ -27,13 +33,24 @@ class MainActivity3 : AppCompatActivity() {
             var value = et.text.toString().lowercase()
             if(value == word){
                 text.text = word
-                val intent = Intent(this, MainActivity2::class.java)
-                startActivity(intent)
+                handler.postDelayed({
+
+                    val intent = Intent(this, MainActivity2::class.java)
+                    startActivity(intent)
+
+                }, delayInMillis)
+
+                return@setOnClickListener
+
             }else if(count==2){
-                Toast.makeText(this,"You have ruin out of guess", Toast.LENGTH_LONG).show()
+
                 text.text = word
-                val intent = Intent(this, gameOver::class.java)
-                startActivity(intent)
+                handler.postDelayed({
+                    val intent = Intent(this, gameOver::class.java)
+                    startActivity(intent)
+
+                }, delayInMillis)
+
                 return@setOnClickListener
             }
 
