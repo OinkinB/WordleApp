@@ -24,7 +24,12 @@ class MainActivity3 : AppCompatActivity() {
         var count  = 0
         var string = ""
         btn.setOnClickListener {
-            if(count==2){
+            var value = et.text.toString().lowercase()
+            if(value == word){
+                text.text = word
+                val intent = Intent(this, MainActivity2::class.java)
+                startActivity(intent)
+            }else if(count==2){
                 Toast.makeText(this,"You have ruin out of guess", Toast.LENGTH_LONG).show()
                 text.text = word
                 val intent = Intent(this, gameOver::class.java)
@@ -32,15 +37,6 @@ class MainActivity3 : AppCompatActivity() {
                 return@setOnClickListener
             }
 
-
-
-            //val et = findViewById<EditText>(R.id.editText)
-            var value = et.text.toString().lowercase()
-            if(value.toString() == word){
-
-                val intent = Intent(this, MainActivity2::class.java)
-                startActivity(intent)
-            }
 
             if(value.length>4 ||value.length<4){
                 Toast.makeText(this,"Please use 4 letters", Toast.LENGTH_LONG).show()
@@ -77,12 +73,6 @@ class MainActivity3 : AppCompatActivity() {
             count++
             string = ""
             et.setText("")
-            if(value.toString() == word){
-
-                val intent = Intent(this, MainActivity2::class.java)
-                startActivity(intent)
-            }
-
 
 
         }
